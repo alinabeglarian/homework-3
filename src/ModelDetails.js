@@ -3,22 +3,22 @@ import PropTypes from 'prop-types'
 
 export default class ModelDetails extends Component {
   static propTypes = {
-    state: PropTypes.array.isRequired
+    model: PropTypes.array.isRequired
   }
 
   render() {
     return (
       <div>
         <ul>
-      { this.props.state.map(state =>
-        <li key={ state.year }>
-          <div className='name'>Name: <b>{ state.name }</b></div>
-          <div>Manufacturer: <b>{ state.manufacturer }</b></div>
-          <div>Year: <b>{ state.year }</b></div>
-          <div>Origin: <b>{ state.origin }</b></div>
-        </li>
-      ) }
-    </ul>
+          {this.props.model.map((model, i) =>
+            <li key={ i }>
+              <div>Name: <b>{ model.name }</b></div>
+              <div>Manufacturer: <b>{ model.manufacturer }</b></div>
+              <div>Year: <b>{ model.year }</b></div>
+              <div>Origin: <b>{ model.origin }</b></div>
+            </li>
+          )}
+        </ul>
       </div>
     )
   }

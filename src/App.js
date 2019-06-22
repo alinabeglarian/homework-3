@@ -32,8 +32,8 @@ const data = [
 
 class App extends React.Component {
   state = {
-    data,
-    }
+    data
+  }
   
   updateSelection = (event) => {
     this.setState({ selectedValue: event.target.value });
@@ -52,8 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ModelDetails state={this.props.reduxsState} />
-
+        <ModelDetails model={this.props.reduxsState} />
         <select value={this.state.selectedValue} onChange={this.updateSelection}>
           <option value="">-- Pick a model --</option>
           {this.state.data.map((data) => 
