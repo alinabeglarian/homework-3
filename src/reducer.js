@@ -1,7 +1,12 @@
-const reducer = (state = [], action = {}) => {
+const reducer = (reduxState = [], action = {}) => {
   switch (action.type) {
+    case 'ADD_MODEL':
+      return [
+        ...reduxState,
+        {...action.payload}
+      ]
   default:
-    return state
+    return reduxState
   }
 }
 
